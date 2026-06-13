@@ -79,49 +79,6 @@
   transition: all 0.28s ease;
 }
 
-/* Card pointer detection backdrop glow */
-.cert-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    300px circle at var(--card-mouse-x, 0px) var(--card-mouse-y, 0px),
-    var(--cert-glow-color),
-    transparent 80%
-  );
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-/* Card pointer detection border glow */
-.cert-card::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: radial-gradient(
-    250px circle at var(--card-mouse-x, 0px) var(--card-mouse-y, 0px),
-    var(--cert-accent),
-    transparent 80%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 2;
-}
-
-.cert-card:hover::before,
-.cert-card:hover::after {
-  opacity: 1;
-}
-
 .cert-card:hover {
   transform: scale(1.06) rotate(0deg);
   box-shadow: 0 0 22px var(--cert-accent-glow);

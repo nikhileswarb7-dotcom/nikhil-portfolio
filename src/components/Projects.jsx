@@ -96,13 +96,6 @@ export default function Projects() {
               <motion.div
                 key={idx}
                 className="project-card"
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  e.currentTarget.style.setProperty("--card-mouse-x", `${x}px`);
-                  e.currentTarget.style.setProperty("--card-mouse-y", `${y}px`);
-                }}
                 variants={{
                   hidden: { opacity: 0, y: 40, scale: 0.9 },
                   visible: {

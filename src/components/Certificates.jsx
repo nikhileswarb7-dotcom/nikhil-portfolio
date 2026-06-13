@@ -59,13 +59,6 @@ export default function Certificates() {
             <motion.div
               key={c.title}
               className="cert-card"
-              onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                e.currentTarget.style.setProperty("--card-mouse-x", `${x}px`);
-                e.currentTarget.style.setProperty("--card-mouse-y", `${y}px`);
-              }}
               style={{ ["--angle"]: `${Math.random() * 8 - 4}deg` }}
               initial={{ opacity: 0, y: 40, rotate: -4 }}
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}

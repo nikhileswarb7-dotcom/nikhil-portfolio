@@ -19,7 +19,6 @@ export default function App() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [introDone, setIntroDone] = useState(false);
   const [openGalleryPage, setOpenGalleryPage] = useState(false); // <--- NEW STATE
-  const spotlightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
@@ -31,32 +30,8 @@ export default function App() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (spotlightRef.current) {
-        spotlightRef.current.style.setProperty("--x", `${e.clientX}px`);
-        spotlightRef.current.style.setProperty("--y", `${e.clientY}px`);
-      }
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
   return (
     <div className="bg-white dark:bg-black min-h-screen relative overflow-x-hidden transition-colors duration-300">
-
-      {/* Interactive Cursor Spotlight Glow */}
-      <div
-        ref={spotlightRef}
-        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
-        style={{
-          background: theme === "dark"
-            ? "radial-gradient(600px circle at var(--x, -1000px) var(--y, -1000px), rgba(18, 247, 255, 0.08), transparent 80%)"
-            : "radial-gradient(600px circle at var(--x, -1000px) var(--y, -1000px), rgba(0, 110, 255, 0.05), transparent 80%)",
-        }}
-      />
 
       {/* Navbar always visible */}
       {!openGalleryPage && (

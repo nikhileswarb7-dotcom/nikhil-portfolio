@@ -58,49 +58,6 @@
   --project-glow-color: rgba(0, 234, 255, 0.08);
 }
 
-/* Card pointer detection backdrop glow */
-.project-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    300px circle at var(--card-mouse-x, 0px) var(--card-mouse-y, 0px),
-    var(--project-glow-color),
-    transparent 80%
-  );
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
-}
-
-/* Card pointer detection border glow */
-.project-card::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: radial-gradient(
-    250px circle at var(--card-mouse-x, 0px) var(--card-mouse-y, 0px),
-    var(--a2),
-    transparent 80%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 2;
-}
-
-.project-card:hover::before,
-.project-card:hover::after {
-  opacity: 1;
-}
-
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--a7);
