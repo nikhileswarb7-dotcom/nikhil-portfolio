@@ -80,6 +80,7 @@ function AchievementCard({ ach }: { ach: Achievement }) {
             src={ach.img}
             alt={ach.title}
             className="g-cimg"
+            loading="lazy"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -112,7 +113,7 @@ function AchievementCard({ ach }: { ach: Achievement }) {
               exit="exit"
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={ach.img} className="g-modal-img" alt={ach.title} />
+              <img src={ach.img} className="g-modal-img" alt={ach.title} loading="lazy" />
 
               <button className="g-close-modal" onClick={() => setOpen(false)}>
                 ✕

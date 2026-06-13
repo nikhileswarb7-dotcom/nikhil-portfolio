@@ -17,7 +17,7 @@ export function PhotographyFrames() {
       <div className="masonry">
         {Object.values(images).map((img: any, index) => (
           <div key={index} className="masonry-item">
-            <img src={img.default} alt="photography" />
+            <img src={img.default} alt="photography" loading="lazy" />
           </div>
         ))}
       </div>

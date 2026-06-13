@@ -94,6 +94,7 @@ function GalleryProjectCard({ project }: { project: Project }) {
               src={project.images[index]}
               alt={project.title}
               className="g-cimg"
+              loading="lazy"
               variants={fade}
               initial="initial"
               animate="animate"
@@ -136,6 +137,7 @@ function GalleryProjectCard({ project }: { project: Project }) {
                   src={project.images[index]}
                   alt="fullscreen"
                   className="g-modal-img"
+                  loading="lazy"
                   variants={fade}
                   initial="initial"
                   animate="animate"

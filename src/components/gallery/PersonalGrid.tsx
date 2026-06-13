@@ -17,7 +17,7 @@ export function PersonalGrid() {
       <div className="masonry">
         {Object.values(images).map((img: any, index) => (
           <div key={index} className="masonry-item">
-            <img src={img.default} alt="personal" />
+            <img src={img.default} alt="personal" loading="lazy" />
           </div>
         ))}
       </div>

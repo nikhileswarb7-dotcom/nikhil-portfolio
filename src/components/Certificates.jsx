@@ -73,7 +73,7 @@ export default function Certificates() {
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
               onClick={() => setSelectedCert(c)}
             >
-              <img src={c.img} alt={c.title} className="cert-img" />
+              <img src={c.img} alt={c.title} className="cert-img" loading="lazy" />
               <strong>{c.title}</strong>
               <span className="cert-meta">
                 {c.org} • {c.date}
@@ -96,6 +96,7 @@ export default function Certificates() {
             <motion.img
               className="modal-img"
               src={selectedCert.img}
+              loading="lazy"
               initial={{ scale: 0.85 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.85 }}
